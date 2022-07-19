@@ -1,1 +1,1 @@
-CREATE TABLE IF NOT EXISTS products (product_name text, price number)
+CREATE TABLE IF NOT EXISTS source ( track_id number, types text, traveled_d number, avg_speed number, trajectory text)
