@@ -1,0 +1,36 @@
+
+
+============================== 2022-07-20 00:18:13.830023 | 7cc74d35-ad61-46d8-a7e1-73567d3ebd83 ==============================
+00:18:13.830023 [info ] [MainThread]: Running with dbt=1.1.1
+00:18:14.385721 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\IRONMAN\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'dbt', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+00:18:14.386727 [debug] [MainThread]: Tracking: tracking
+00:18:14.439712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37F670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37F0D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37F6D0>]}
+00:18:14.463718 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\IRONMAN\.dbt
+00:18:14.466720 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+00:18:58.035781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37AD30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37AA00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37A910>]}
+
+
+============================== 2022-07-20 00:19:37.970059 | c9b889f9-dba0-4b1f-9a34-6307acc923b3 ==============================
+00:19:37.970059 [info ] [MainThread]: Running with dbt=1.1.1
+00:19:37.970059 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\IRONMAN\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'dbt', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+00:19:37.970059 [debug] [MainThread]: Tracking: tracking
+00:19:38.005584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F6D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F520>]}
+00:19:38.007591 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+00:19:43.741590 [info ] [MainThread]: Profile dbt written to C:\Users\IRONMAN\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+00:19:43.743593 [info ] [MainThread]: 
+Your new dbt project "dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+00:19:43.747596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F1C0>]}
