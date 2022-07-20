@@ -18,32 +18,22 @@ class WarehouseAdmin():
         cursor = db.cursor()
         return db, cursor
 
-    def connect_to_server(self,host, user, password):
-        """
-        connect to a server
-        """
-        mydb = connector.connector.connect(
-                                host=host,
-                                user=user,
-                                password=password
-                                )
-        return mydb
 
-    def createDB(self, dbName: str) -> None:
+    def createDB(self, cursor, dbName: str) -> None:
         """
         A function to create SQL database
         """
-        mydb, cursor = DBConnect()
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
-        mydb.commit()
+
+    def close_connection(self, connection, cursor):
+        connection.commit()
         cursor.close()
 
-    def createTables(self, dbName: str) -> None:
+    def createTables(self, cursor, file_sql, dbName: str) -> None:
         """
         A function to create SQL table
         """
-        mydb, cursor = DBConnect(dbName)
-        sqlFile = '../airflow/dags/__pycache__/schema.sql'
+        sqlFile = file_sql
         fd = open(sqlFile, 'r')
         readsqlFile = fd.read()
         fd.close()
@@ -54,27 +44,23 @@ class WarehouseAdmin():
             except Exception as e:
                 print('command skipped: ', command)
                 print(e)
-        mydb.commit()
-        cursor.close()
 
-    def insert_into_warehouse(dbName: str, df: pd.DataFrame, table_name: str) -> None:
+    def insert_into_warehouse(self, cursor, connection, dbName: str, df: pd.DataFrame, table_name: str) -> None:
         """
         A function to insert values in SQL table
         """
-        mydb, cursor = DBConnect(dbName)
         for _, row in df.iterrows():
             sqlQuery = f"""INSERT INTO {table_name} 
-            (track_id, type, traveled_d, avg_speed, lat, lon,
-                        speed, lon_acc, lat_acc, time)
-                  VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"""
+            (track_id, types, traveled_d, avg_speed, trajectory)
+                  VALUES(%s, %s, %s, %s, %s);"""
 
-            data = (row[0], row[1], row[2], row[3], (row[4]), (row[5]), row[6], row[7], row[8], row[9])
+            data = (row[0], row[1], row[2], row[3], (row[4]))
             try:
                 cursor.execute(sqlQuery, data)
-                mydb.commit()
+                connection.commit()
                 print('Data inserted successfully')
             except Exception as e:
-                mydb.rollback()
+                connection.rollback()
                 print('Error: ', e)
 
 if __name__=="__main__":
