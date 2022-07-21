@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: traffic_source
+    description: "traffic data storage"
+    database: warehouse
+    schema: warehouse
+    tables:
+      - name: source
