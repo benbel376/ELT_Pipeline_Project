@@ -3,7 +3,7 @@ import pandas as pd
 from mysql.connector import Error
 import mysql.connector as connector
 
-class WarehouseAdmin():
+class Loader():
     
     def __init__(self):
         pass
@@ -19,17 +19,20 @@ class WarehouseAdmin():
         return db, cursor
 
 
-    def createDB(self, cursor, dbName: str) -> None:
+    def create_db(self, cursor, dbName: str) -> None:
         """
         A function to create SQL database
         """
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
 
+
     def close_connection(self, connection, cursor):
+        """
+        """
         connection.commit()
         cursor.close()
 
-    def createTables(self, cursor, file_sql, dbName: str) -> None:
+    def create_table(self, cursor, file_sql, dbName: str) -> None:
         """
         A function to create SQL table
         """
@@ -45,7 +48,8 @@ class WarehouseAdmin():
                 print('command skipped: ', command)
                 print(e)
 
-    def insert_into_warehouse(self, cursor, connection, dbName: str, df: pd.DataFrame, table_name: str) -> None:
+
+    def insert_into_table(self, cursor, connection, dbName: str, df: pd.DataFrame, table_name: str) -> None:
         """
         A function to insert values in SQL table
         """
@@ -64,7 +68,7 @@ class WarehouseAdmin():
                 print('Error: ', e)
 
 if __name__=="__main__":
-    wr = WarehouseAdmin()
+    wr = Loader()
     wr.createDB(dbName='DWH')
     df = pd.read_csv("../data/extracted.csv")
     df.drop(["Unnamed: 0"], axis=1, inplace=True)

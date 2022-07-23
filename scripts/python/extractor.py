@@ -10,7 +10,7 @@ class extractor:
         return df
 
     
-    def correct_shape(self, data):
+    def restructure(self, data):
         track_ids = []
         types = []
         traveled_d = []
