@@ -1,0 +1,122 @@
+
+
+============================== 2022-07-20 00:18:13.830023 | 7cc74d35-ad61-46d8-a7e1-73567d3ebd83 ==============================
+00:18:13.830023 [info ] [MainThread]: Running with dbt=1.1.1
+00:18:14.385721 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\IRONMAN\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'dbt', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+00:18:14.386727 [debug] [MainThread]: Tracking: tracking
+00:18:14.439712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37F670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37F0D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37F6D0>]}
+00:18:14.463718 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\IRONMAN\.dbt
+00:18:14.466720 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+00:18:58.035781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37AD30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37AA00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025C3B37A910>]}
+
+
+============================== 2022-07-20 00:19:37.970059 | c9b889f9-dba0-4b1f-9a34-6307acc923b3 ==============================
+00:19:37.970059 [info ] [MainThread]: Running with dbt=1.1.1
+00:19:37.970059 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\IRONMAN\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'dbt', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+00:19:37.970059 [debug] [MainThread]: Tracking: tracking
+00:19:38.005584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F6D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F520>]}
+00:19:38.007591 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+00:19:43.741590 [info ] [MainThread]: Profile dbt written to C:\Users\IRONMAN\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+00:19:43.743593 [info ] [MainThread]: 
+Your new dbt project "dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+00:19:43.747596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000204E827F1C0>]}
+
+
+============================== 2022-07-20 18:08:07.563813 | f38d3e1f-f72b-41b0-a564-0dc266c72766 ==============================
+18:08:07.563813 [info ] [MainThread]: Running with dbt=1.1.1
+18:08:08.369787 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\IRONMAN\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'dbt_transformer', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+18:08:08.369787 [debug] [MainThread]: Tracking: tracking
+18:08:08.411524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F8FD0F12B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F8FD0F1130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F8FD0F1160>]}
+18:08:08.413525 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+18:08:13.925676 [info ] [MainThread]: 
+Your new dbt project "dbt_transformer" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+18:08:13.925676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F8FD0EBF70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F8FD0F1160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002F8FD0F12B0>]}
+
+
+============================== 2022-07-20 21:21:08.506581 | b0f23836-cf7c-49d5-8b4d-b83f4f41705b ==============================
+21:21:08.506581 [info ] [MainThread]: Running with dbt=1.0.8
+21:21:08.553493 [debug] [MainThread]: running dbt with arguments Namespace(cls=<class 'dbt.task.init.InitTask'>, debug=None, defer=None, event_buffer_size=None, fail_fast=None, log_cache_events=False, log_format=None, partial_parse=None, printer_width=None, profile=None, profiles_dir='C:\\Users\\IRONMAN\\.dbt', project_dir=None, project_name='transformer_dbt', record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, skip_profile_setup=False, state=None, static_parser=None, target=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='init', write_json=None)
+21:21:08.553493 [debug] [MainThread]: Tracking: tracking
+21:21:08.618517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FBBE15DBB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FBB7FEAC40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FBBE15DC10>]}
+21:21:08.619516 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+21:21:33.651288 [info ] [MainThread]: 
+Your new dbt project "transformer_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+21:21:33.682545 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FBBE15DEB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FBBE15DC70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FBBE15DEE0>]}
+
+
+============================== 2022-07-20 21:28:53.593088 | 4f545275-9c15-4c7c-8086-4c9b83010210 ==============================
+21:28:53.593088 [info ] [MainThread]: Running with dbt=1.0.8
+21:28:53.608729 [debug] [MainThread]: running dbt with arguments Namespace(cls=<class 'dbt.task.debug.DebugTask'>, config_dir=False, debug=None, defer=None, event_buffer_size=None, fail_fast=None, log_cache_events=False, log_format=None, partial_parse=None, printer_width=None, profile=None, profiles_dir='C:\\Users\\IRONMAN\\.dbt', project_dir=None, record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, state=None, static_parser=None, target=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='debug', write_json=None)
+21:28:53.608729 [debug] [MainThread]: Tracking: tracking
+21:28:53.629963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002243136CB80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002243136CFA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002243136CBE0>]}
+21:28:54.018671 [debug] [MainThread]: Executing "git --help"
+21:28:54.179670 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+21:28:54.180669 [debug] [MainThread]: STDERR: "b''"
+21:28:54.223671 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022431749970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022431749910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022431749B80>]}
+
+
+============================== 2022-07-21 20:07:47.359517 | 8ccd1211-7e6a-4396-9b12-3cc44075a60b ==============================
+20:07:47.359517 [info ] [MainThread]: Running with dbt=1.0.8
+20:07:47.398548 [debug] [MainThread]: running dbt with arguments Namespace(cls=<class 'dbt.task.init.InitTask'>, debug=None, defer=None, event_buffer_size=None, fail_fast=None, log_cache_events=False, log_format=None, partial_parse=None, printer_width=None, profile=None, profiles_dir='C:\\Users\\IRONMAN\\.dbt', project_dir=None, project_name='dbt_transformer', record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, skip_profile_setup=False, state=None, static_parser=None, target=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='init', write_json=None)
+20:07:47.398548 [debug] [MainThread]: Tracking: tracking
+20:07:47.420549 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012A6A94E0D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012A6A94EF70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012A6A94E220>]}
+20:07:47.421549 [debug] [MainThread]: Starter project path: C:\Users\IRONMAN\miniconda3\envs\py38\lib\site-packages\dbt\include\starter_project
+20:07:56.103957 [info ] [MainThread]: 
+Your new dbt project "dbt_transformer" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+20:07:56.119589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012A6A94E430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012A6A94EF70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000012A6A94ED00>]}
