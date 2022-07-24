@@ -27,6 +27,9 @@ class Loader():
                           password=password,
                              database=dbName, buffered=True)
             cursor = connection.cursor()
+
+            print("successfully connected")
+            
             return connection, cursor
         except Exception as e:
             print(f"Error: {e}")
