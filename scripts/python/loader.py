@@ -8,7 +8,7 @@ class Loader():
     def __init__(self):
         pass
         
-    def connect_to_db(self,host:str, user:str, password:str, dbName:str=None):
+    def connect_to_server(self,host:str, user:str, password:str, dbName:str=None):
         """
         A function that allows you to connect to SQL database
         Args:
@@ -38,7 +38,7 @@ class Loader():
     def create_db(self, cursor, dbName: str) -> None:
         """
         A function to create SQL database
-        
+
         Args:
             cursor: cursor object
             dbName: name of database
