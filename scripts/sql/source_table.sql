@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS `elt`;
+DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `source` 
 (
     `track_id` INT NOT NULL,

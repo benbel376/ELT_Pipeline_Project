@@ -1,12 +1,12 @@
 import pandas as pd
 
-class extractor:
+class Extractor:
 
     def __init__(self):
         pass
 
     def load_csv(self, path):
-        df = ""
+        df = pd.read_csv(path)
         return df
 
     
