@@ -38,6 +38,7 @@ class Loader():
     def create_db(self, cursor, dbName: str) -> None:
         """
         A function to create SQL database
+        
         Args:
             cursor: cursor object
             dbName: name of database
@@ -55,9 +56,10 @@ class Loader():
     def close_connection(self, connection, cursor):
         """
         closes connection with database.
+
         Args: 
-            connection: 
-            cursor:
+            connection: mysql connection object
+            cursor: cursor object
 
         Returns: None.
         """
@@ -71,9 +73,9 @@ class Loader():
         A function to create SQL table
         
         Args:
-            cursor:
-            file_sql:
-            dbName:
+            cursor: cursor object
+            file_sql: the location of the sql table creation query file
+            dbName: the name of the database
 
         Returns: None
         """
@@ -94,11 +96,11 @@ class Loader():
         """
         A function to insert values in SQL table
         Args:
-            cursor:
-            connection:
-            dbName:
-            df:
-            table_name:
+            cursor: cursor object
+            connection: mysql connection object
+            dbName: database name
+            df: dataframe that holds the data
+            table_name: the name of the table to store the data in
         
         Returns: None.
         """
