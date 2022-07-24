@@ -8,33 +8,71 @@ class Loader():
     def __init__(self):
         pass
         
-    def connect_to_db(self,host, user, password, dbName=None):
+    def connect_to_db(self,host:str, user:str, password:str, dbName:str=None):
         """
         A function that allows you to connect to SQL database
+        Args:
+            host: ip address or domain
+            user: the user of the server
+            password: the password to server
+            dbName: the name of the server
+
+        Returns:
+            connection: connection object
+            cursor: cursor object
+
         """
-        db = connector.connect(host=host, user=user,
+        try:
+            connection = connector.connect(host=host, user=user,
                           password=password,
                              database=dbName, buffered=True)
-        cursor = db.cursor()
-        return db, cursor
+            cursor = connection.cursor()
+            return connection, cursor
+        except Exception as e:
+            print(f"Error: {e}")
 
 
     def create_db(self, cursor, dbName: str) -> None:
         """
         A function to create SQL database
+        Args:
+            cursor: cursor object
+            dbName: name of database
+        
+        Returns: None.
         """
-        cursor.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
+        try:
+            cursor.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
+            print("database successfully created")
+        except Exception as e:
+            print(f"Error: {e}")
+
 
 
     def close_connection(self, connection, cursor):
         """
+        closes connection with database.
+        Args: 
+            connection: 
+            cursor:
+
+        Returns: None.
         """
         connection.commit()
         cursor.close()
+        print("connection closed and transaction committed")
+
 
     def create_table(self, cursor, file_sql, dbName: str) -> None:
         """
         A function to create SQL table
+        
+        Args:
+            cursor:
+            file_sql:
+            dbName:
+
+        Returns: None
         """
         sqlFile = file_sql
         fd = open(sqlFile, 'r')
@@ -52,6 +90,14 @@ class Loader():
     def insert_into_table(self, cursor, connection, dbName: str, df: pd.DataFrame, table_name: str) -> None:
         """
         A function to insert values in SQL table
+        Args:
+            cursor:
+            connection:
+            dbName:
+            df:
+            table_name:
+        
+        Returns: None.
         """
         for _, row in df.iterrows():
             sqlQuery = f"""INSERT INTO {table_name} 
@@ -62,10 +108,11 @@ class Loader():
             try:
                 cursor.execute(sqlQuery, data)
                 connection.commit()
-                print('Data inserted successfully')
             except Exception as e:
                 connection.rollback()
                 print('Error: ', e)
+        print('Data inserted successfully')
+
 
 if __name__=="__main__":
     wr = Loader()

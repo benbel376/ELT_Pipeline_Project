@@ -6,11 +6,29 @@ class Extractor:
         pass
 
     def load_csv(self, path):
+        """
+        a function to load csv file.
+
+        Args:
+            path: location of csv file and its name.
+        
+        Returns:
+            df: dataframe.
+        """
         df = pd.read_csv(path)
         return df
 
     
     def restructure(self, data):
+        """
+        a function to restructure data
+        
+        Args:
+            data: a dataframe
+        
+        Returns:
+            new_df: restructured dataframe
+        """
         track_ids = []
         types = []
         traveled_d = []
@@ -38,4 +56,5 @@ class Extractor:
         data_dict = {columns[0]:track_ids, columns[1]:types, columns[2]:traveled_d, columns[3]:avg_speeds, columns[4]:trajectories}
         new_df = pd.DataFrame(data_dict)
 
+        print("dataframe successfully created")
         return new_df
