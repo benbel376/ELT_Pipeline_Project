@@ -40,6 +40,9 @@ Airflow is going to play the role of orchestrating the process described above u
 
 ```
 git clone https://github.com/benbel376/ELT_Pipeline_Project.git
+cd ELT_Pipeline_Project
+./setup
+
 ```
 
 ## Author
