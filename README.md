@@ -1,5 +1,5 @@
 # ELT Pipeline Project
-[![npm](https://img.shields.io/npm/v/@react-native-community/geolocation)](https://www.npmjs.com/package/@react-native-community/geolocation) [![CircleCI Status](https://img.shields.io/circleci/project/github/react-native-community/react-native-geolocation/master.svg)](https://circleci.com/gh/react-native-community/workflows/react-native-geolocation/tree/master) ![Supports Android, iOS and web](https://img.shields.io/badge/platforms-android%20%7C%20ios%20%7C%20web-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/geolocation.svg)
+![image](https://user-images.githubusercontent.com/44437166/180681713-ea7f8116-baf7-41ca-9990-6c69a040b5e0.png)
 
 **Table of content**
 
