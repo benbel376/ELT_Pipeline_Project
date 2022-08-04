@@ -6,13 +6,11 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
+![image](https://user-images.githubusercontent.com/44437166/182869355-8a837116-8b9b-44d7-8ad8-73ac4e38836a.png)
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/eandualem/sensor_data_elt">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">Sensor Data ELT</h3>
 
@@ -116,12 +114,6 @@ Make sure you have docker installed on local machine.
 ![image](https://user-images.githubusercontent.com/44437166/182867759-39e45b73-7a30-4ee1-a559-113e950f23e8.png)
 ![image](https://user-images.githubusercontent.com/44437166/182867777-48803c67-2d36-429c-870b-eda6c149029d.png)
 
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/eandualem/sensor_data_elt/issues) for a list of proposed features (and known issues).
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -146,9 +138,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Elias Andualem - eandualem@gmail.com
+Biniyam Belayneh - biniyambelayneh376@gmail.com
 
-Project Link: [https://github.com/eandualem/sensor_data_elt](https://github.com/eandualem/sensor_data_elt)
+Project Link: [https://github.com/benbel376/ELT_pipeline_project](https://github.com/benbel376/ELT_pipeline_project)
 
 
 
