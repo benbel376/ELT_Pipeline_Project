@@ -63,18 +63,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-The objective of this project was to migrate an ELT pipeline developed for the week 11 challenge using(MYSQL, DBT, Apache Airflow, and Redash) to a more scalable and robust ELT pipeline. This was accomplished by changing the two main components, namely the MySQL data warehouse to Postgres and the Redash dashboard to Superset.
+### Objective
+The objective of this project was to create a scalable end to end data pipeline that transports a vehicle trajectory data from csv file to a warehouse, where it will be transforemed into a suitable form for further processing.
+
+### The Pipeline
+![image](https://user-images.githubusercontent.com/44437166/182868458-c9a8efbd-9f64-41b7-af37-6b2298ee5c26.png)
+
 
 ### Built With
 
 Tech Stack used in this project
-* [MYSQL](https://getbootstrap.com)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Apache Airflow](https://jquery.com)
 * [dbt](https://laravel.com)
 * [Redash](https://laravel.com)
-* [Superset](https://superset.apache.org/)
 
 
 
@@ -91,61 +93,28 @@ Make sure you have docker installed on local machine.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/eandualem/sensor_data_elt
+   git clone https://github.com/benbel376/ELT_pipeline_project
    ```
 2. Datawarehouse
    ```sh
-   cd sensor_data_elt
+   cd ELT_pipeline_project/docker
    ```
 3. Run
    ```sh
-    docker-compose up
+    docker-compose -f docker-compose-postgres.yml up
+    docker-compose -f docker-compose-airflow.yml up
+    docker-compose -f docker-compose-redash.yml up
    ```
-4. Can access and Modefy the default configrations for each tool using the `.env` files.
+4. Can access and Modefy the default configrations for each tool using the dockerfiles files.
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-### Adminer: 
-Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Used to access MYSQL and Postgres Databases.
-- MYSQL:
-   ```sh
-   Navigate to `http://localhost:8080/` on the browser
-   use `mysqldb` server
-   use `dbtdb` database
-   use `root` for username
-   use `root` for password
-   ```
-- Postgress:
-   ```sh
-   Navigate to `http://localhost:8080/` on the browser
-   use `postgres-dbt` server
-   use `dbtdb` database
-   use `dbtuser` for username
-   use `pssd` for password
-   ```
-### Airflow: 
-  Airflow is used for aurchestration and automation.
-   ```sh
-   Navigate to `http://localhost:8080/` on the browser
-   use `admin` for username
-   use `admin` for password
-   ```
-### DBT:
-DBT is used for cleaning and transforming the data in the warehouses. 
-- Airflow is used for automation of running and testing dbt models
-- navigate to `https://sensordataelt.herokuapp.com/index.html` to access dbt docs
-
-### Redash
-   ```sh
-   open terminal and execute `docker-compose run — rm server create_db`
-   using adminer create a user and grant read access
-   Navigate to `http://localhost:5000/` on the browser
-   ```
-### Superset
-- navigate to `localhost:8088` to access Airflow 
-
+![image](https://user-images.githubusercontent.com/44437166/182867684-65a5e5a6-07ec-45af-a6d7-bf7d6e68e0fd.png)
+![image](https://user-images.githubusercontent.com/44437166/182867704-5123c587-24dd-4404-86b8-a14c5a3d0bc8.png)
+![image](https://user-images.githubusercontent.com/44437166/182867733-8a32a593-108d-44ae-8e80-8d5357ca2860.png)
+![image](https://user-images.githubusercontent.com/44437166/182867759-39e45b73-7a30-4ee1-a559-113e950f23e8.png)
+![image](https://user-images.githubusercontent.com/44437166/182867777-48803c67-2d36-429c-870b-eda6c149029d.png)
 
 <!-- ROADMAP -->
 ## Roadmap
