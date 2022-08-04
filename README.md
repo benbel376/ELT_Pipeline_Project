@@ -8,11 +8,14 @@
 - [Introduction](#Introduction)
 - [Files](#Files)
 
-## Overview
+## Project Overview
 
-A city traffic department wants to collect traffic data using swarm UAVs (drones) from a number of locations in the city and use the data collected for improving traffic flow in the city and for a number of other undisclosed projects. We are responsible for creating a scalable data warehouse that will host the vehicle trajectory data extracted by analyzing footage taken by swarm drones and static roadside cameras.
+This project aims to develop a data pipeline that transports a vehicle trajectory data from a csv file to a scalable warehouse, whare it can be transformed into more usable but not too specific forms using DBT.
 
-The data warehouse should take into account future needs, organize data such that a number of downstream projects query the data efficiently. You should use the Extract Load Transform (ELT) framework using DBT. Unlike the Extract, Transform, Load (ETL), the ELT framework helps analytic engineers in the city traffic department setup transformation workflows on a need basis.
+This project can be used for any project that requires to work with the pNeuma's trajectory data. It can also be used for other csv to warehouse data transporting projects with some modifications to the extraction code and the dbt models.
+
+The project has the following general outline
+
 
 ![image](https://user-images.githubusercontent.com/44437166/180680935-6c8be686-a71a-4894-8b23-805f4ed9b85a.png)
 
