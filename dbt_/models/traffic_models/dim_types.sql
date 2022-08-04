@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 with source_data as (
-    select * from {{ source('traffic_source', 'source') }}
+    select * from {{source("traffic_source_table", "source")}}
 ),
 
 final as (

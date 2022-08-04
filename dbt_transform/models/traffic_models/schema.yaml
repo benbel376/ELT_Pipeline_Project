@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: traffic_source
-    description: "traffic data storage"
-    schema: warehouse
-    tables:
-      - name: source

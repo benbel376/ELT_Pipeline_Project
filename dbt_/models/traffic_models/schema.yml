@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: traffic_source_table
+    schema: "warehouse"
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    loader: stitch
+    tables:
+      - name: source
+
+models:
+  - name: dim_types
+    columns:
+      - name: Id
+        tests:
+          - unique
