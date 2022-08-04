@@ -1,5 +1,5 @@
 # ELT Pipeline Project
-![image](https://user-images.githubusercontent.com/44437166/182762268-d5a1c1a4-8bf0-42c3-95fc-b23b2257bdae.png)
+![image](https://user-images.githubusercontent.com/44437166/182762662-a21a8f0a-926c-420c-b2e9-48a8f44e5613.png)
 
 **Table of content**
 
