@@ -1,77 +1,207 @@
-# ELT Pipeline Project
-![image](https://user-images.githubusercontent.com/44437166/182762662-a21a8f0a-926c-420c-b2e9-48a8f44e5613.png)
-
-**Table of content**
-
-- [Overview](#overview)
-- [Install](#install)
-- [Introduction](#Introduction)
-- [Files](#Files)
-
-## Project Overview
-
-### Introduction
-This project aims to develop a data pipeline that transports a vehicle trajectory data from a csv file to a scalable warehouse, where it can be transformed into more usable but not too specific forms using DBT.
-
-This project can be used for any project that requires to work with the pNeuma's trajectory data. It can also be used for other csv to warehouse data transporting projects with some modifications to the extraction code and the dbt models.
-
-### The Pipeline
-
-![image](https://user-images.githubusercontent.com/44437166/180680935-6c8be686-a71a-4894-8b23-805f4ed9b85a.png)
-
-1. Data is extracted from the original data source (from csv file). At this point there will be some restructuring of the original form so that it can fit into a pandas data frame.
-2. Data is given to the data loader python script.
-3. The data is written to the source table in the warehouse
-4. From the source table, DBT will load the data
-5. DBT will run SQL models on the loaded data to generate 2 dimension and 2 fact tables. These 4 tables are our final forms.
-6. Our final data forms will be loaded into Redash and visualized
-Airflow is going to play the role of orchestrating the process described above using a DAG script
-
-### Files and Project Structure
-> ### airflow_data
-> contains the dag scripts and initialization docker-compose yaml files for ariflow orchestration
-> ### dbt_transform
-> contains the models and configuration file used by dbt to transform data.
-> ### notebooks
-> the extraction and loading scripts were tested here
-> ### scripts
-> contain all the required extracting and loading functions as well as sql script for table creation in a separate folder.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-## Technologies Used
-- **Airflow**: for archerstration
-- **DBT**: for transformation
-- **Python Libraries**: for extraction and loading scripts
-  - Pandas: for loading csv file and processing
-  - python-mysql-connector: for communicating with warehouse
-- **Mysql**: for warehouse
-- **Docker and Docker-compose**: for hosting the above applications
 
-## Prerequisites
-- Python 3.8
-- RAM: above 4.
-## Installation 
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/eandualem/sensor_data_elt">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-```
-git clone https://github.com/benbel376/ELT_Pipeline_Project.git
-cd ELT_Pipeline_Project
-./setup.sh
-```
-## Results
+  <h3 align="center">Sensor Data ELT</h3>
 
+  <p align="center">
+    A fully dockerized ELT pipeline using MySQL, PostgreSQL, Airflow, DBT, Redash and Superset.
+    <br />
+    <a href="https://sensordataelt.herokuapp.com/index.html"><strong>Explore the docs »</strong><a>
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/eandualem/sensor_data_elt/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/eandualem/sensor_data_elt/issues">Request Feature</a>
+    .
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+The objective of this project was to migrate an ELT pipeline developed for the week 11 challenge using(MYSQL, DBT, Apache Airflow, and Redash) to a more scalable and robust ELT pipeline. This was accomplished by changing the two main components, namely the MySQL data warehouse to Postgres and the Redash dashboard to Superset.
+
+### Built With
+
+Tech Stack used in this project
+* [MYSQL](https://getbootstrap.com)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Apache Airflow](https://jquery.com)
+* [dbt](https://laravel.com)
+* [Redash](https://laravel.com)
+* [Superset](https://superset.apache.org/)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+Make sure you have docker installed on local machine.
+* Docker
+* DockerCompose
+  
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/eandualem/sensor_data_elt
+   ```
+2. Datawarehouse
+   ```sh
+   cd sensor_data_elt
+   ```
+3. Run
+   ```sh
+    docker-compose up
+   ```
+4. Can access and Modefy the default configrations for each tool using the `.env` files.
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Adminer: 
+Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Used to access MYSQL and Postgres Databases.
+- MYSQL:
+   ```sh
+   Navigate to `http://localhost:8080/` on the browser
+   use `mysqldb` server
+   use `dbtdb` database
+   use `root` for username
+   use `root` for password
+   ```
+- Postgress:
+   ```sh
+   Navigate to `http://localhost:8080/` on the browser
+   use `postgres-dbt` server
+   use `dbtdb` database
+   use `dbtuser` for username
+   use `pssd` for password
+   ```
+### Airflow: 
+  Airflow is used for aurchestration and automation.
+   ```sh
+   Navigate to `http://localhost:8080/` on the browser
+   use `admin` for username
+   use `admin` for password
+   ```
+### DBT:
+DBT is used for cleaning and transforming the data in the warehouses. 
+- Airflow is used for automation of running and testing dbt models
+- navigate to `https://sensordataelt.herokuapp.com/index.html` to access dbt docs
+
+### Redash
+   ```sh
+   open terminal and execute `docker-compose run — rm server create_db`
+   using adminer create a user and grant read access
+   Navigate to `http://localhost:5000/` on the browser
+   ```
+### Superset
+- navigate to `localhost:8088` to access Airflow 
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/eandualem/sensor_data_elt/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
 ## License
-- [MIT License](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiMqbrwqaz5AhVPiqQKHa5uCtkQFnoECAYQAQ&url=https%3A%2F%2Fopensource.org%2Flicenses%2FMIT&usg=AOvVaw1MsEPekvPKCIceu2jiRDy4)
 
-## Author
+Distributed under the MIT License. See `LICENSE` for more information.
 
-👤 **Biniyam Belayneh**
 
-- GitHub: [Biniyam Belayneh](https://github.com/benbel376)
-- LinkedIn: [Biniyam Belayneh](https://www.linkedin.com/in/biniyam-belayneh-demisse-42909617a/)
-## Acknowledgement
-- Thank you [10 academy](https://www.10academy.org/) for the project idea and resource provision
-- Thank you [Start Data Engineering](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjhyZ-gqaz5AhWQ_aQKHbnaAQMQFnoECAgQAQ&url=https%3A%2F%2Fwww.startdataengineering.com%2F&usg=AOvVaw2E27rYT8jytFpiuh4LndRP) for awsome blog posts on data engineering
-- Thank you [pNEUMA](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwia7NfCqaz5AhULzKQKHfz3BPoQFnoECAYQAw&url=https%3A%2F%2Fopen-traffic.epfl.ch%2F&usg=AOvVaw2UHwEsPYyGaAxHnrblo_bR) for data source
-## Show your support
 
-Give a ⭐ if you like this project!
+<!-- CONTACT -->
+## Contact
+
+Elias Andualem - eandualem@gmail.com
+
+Project Link: [https://github.com/eandualem/sensor_data_elt](https://github.com/eandualem/sensor_data_elt)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [10 Academy](https://www.10academy.org/)
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/eandualem/sensor_data_elt.svg?style=for-the-badge
+[contributors-url]: https://github.com/eandualem/sensor_data_elt/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/eandualem/sensor_data_elt.svg?style=for-the-badge
+[forks-url]: https://github.com/eandualem/sensor_data_elt/network/members
+[stars-shield]: https://img.shields.io/github/stars/eandualem/sensor_data_elt.svg?style=for-the-badge
+[stars-url]: https://github.com/eandualem/sensor_data_elt/stargazers
+[issues-shield]: https://img.shields.io/github/issues/eandualem/sensor_data_elt.svg?style=for-the-badge
+[issues-url]: https://github.com/eandualem/sensor_data_elt/issues
+[license-shield]: https://img.shields.io/github/license/eandualem/sensor_data_elt.svg?style=for-the-badge
+[license-url]: https://github.com/eandualem/sensor_data_elt/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/elias-andualem-94a9a7195/
+[product-screenshot]: images/architecture.png
+

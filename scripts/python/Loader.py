@@ -1,14 +1,44 @@
 import os
-import pandas as pd
 from mysql.connector import Error
 import mysql.connector as connector
+import pandas as pd
+import psycopg2
+
 
 class Loader():
     
     def __init__(self):
         pass
         
-    def connect_to_server(self,host:str, user:str, password:str, dbName:str=None):
+    def connect_to_server(self,host:str = "localhost", port:int=5432, user:str = "warehouse", password:str="warehouse", dbName:str="warehouse"):
+        """
+        A function that allows you to connect to SQL database
+        Args:
+            host: ip address or domain
+            user: the user of the server
+            password: the password to server
+            dbName: the name of the server
+
+        Returns:
+            connection: connection object
+            cursor: cursor object
+
+        """
+        try:
+            conn = psycopg2.connect(
+                                host=host,
+                                port=port,
+                                database=dbName,
+                                user=user,
+                                password=password)
+            cur = conn.cursor()
+            print("successfully connected")
+            return conn, cur
+        except Exception as e:
+            print(f"Error: {e}")
+
+
+    def connect_to_mysql_server(self,host:str, port:int, user:str, password:str, dbName:str=None):
         """
         A function that allows you to connect to SQL database
         Args:
@@ -24,8 +54,8 @@ class Loader():
         """
         try:
             connection = connector.connect(host=host, user=user,
-                          password=password,
-                             database=dbName, buffered=True)
+                          password=password, ssl_disabled=True,
+                             database=dbName, port=port, buffered=True)
             cursor = connection.cursor()
 
             print("successfully connected")
@@ -35,22 +65,22 @@ class Loader():
             print(f"Error: {e}")
 
 
-    def create_db(self, cursor, dbName: str) -> None:
+    def load_from_source(self, conn, table, limit, path):
         """
-        A function to create SQL database
-
         Args:
-            cursor: cursor object
-            dbName: name of database
-        
-        Returns: None.
+            cur: cursor to communicate with database.
+            limit: the number of rows to return
+        Returns:
+            result: iteratable object that holds all values of a query
         """
         try:
-            cursor.execute(f"CREATE DATABASE IF NOT EXISTS {dbName};")
-            print("database successfully created")
-        except Exception as e:
-            print(f"Error: {e}")
+            query = 'select * from {table} limit {limit}'
+            results = pd.read_sql_query(query, conn)
 
+            results.to_csv(path)
+            return results
+        except Exception as e:
+            print(f"error: {e}")
 
 
     def close_connection(self, connection, cursor):
@@ -63,8 +93,6 @@ class Loader():
 
         Returns: None.
         """
-        connection.commit()
-        cursor.close()
         print("connection closed and transaction committed")
 
 
@@ -87,9 +115,11 @@ class Loader():
         for command in sqlCommands:
             try:
                 result = cursor.execute(command)
+                print(f"table created successfully")
             except Exception as e:
                 print('command skipped: ', command)
                 print(e)
+        
 
 
     def insert_into_table(self, cursor, connection, dbName: str, df: pd.DataFrame, table_name: str) -> None:
@@ -115,14 +145,9 @@ class Loader():
                 connection.commit()
             except Exception as e:
                 connection.rollback()
-                print('Error: ', e)
+                print(e)
         print('Data inserted successfully')
 
 
 if __name__=="__main__":
-    wr = Loader()
-    wr.createDB(dbName='DWH')
-    df = pd.read_csv("../data/extracted.csv")
-    df.drop(["Unnamed: 0"], axis=1, inplace=True)
-    wr.createTables(dbName='DWH')
-    wr.insert_into_warehouse(dbName = 'DWH', df = df, table_name='elt')
+    pass
