@@ -12,19 +12,13 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Sensor Data ELT</h3>
+  <h3 align="center">ELT Pipeline Project</h3>
 
   <p align="center">
-    A fully dockerized ELT pipeline using MySQL, PostgreSQL, Airflow, DBT, Redash and Superset.
+    A fully dockerized ELT pipeline using, PostgreSQL, Airflow, DBT, and Redash.
     <br />
     <a href="https://sensordataelt.herokuapp.com/index.html"><strong>Explore the docs »</strong><a>
-    <br />
-    <br />
-    ·
-    <a href="https://github.com/eandualem/sensor_data_elt/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/eandualem/sensor_data_elt/issues">Request Feature</a>
-    .
+    <br />    .
   </p>
 </p>
 
