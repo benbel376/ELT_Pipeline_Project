@@ -11,7 +11,7 @@
 ## Project Overview
 
 ### Introduction
-This project aims to develop a data pipeline that transports a vehicle trajectory data from a csv file to a scalable warehouse, whare it can be transformed into more usable but not too specific forms using DBT.
+This project aims to develop a data pipeline that transports a vehicle trajectory data from a csv file to a scalable warehouse, where it can be transformed into more usable but not too specific forms using DBT.
 
 This project can be used for any project that requires to work with the pNeuma's trajectory data. It can also be used for other csv to warehouse data transporting projects with some modifications to the extraction code and the dbt models.
 
