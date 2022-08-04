@@ -29,7 +29,9 @@ def run_loader(**context):
     data = extract.load_csv(path)
     print(f"..................  {data.columns}")
     try:
-        conn, cur = loader.connect_to_server(host="postgres", port=5432, user="warehouse", password="warehouse", dbName="warehouse")
+        conn1, cur1 = loader.connect_to_server(host="mysql", port=3306, user="root", password="mysql", dbName="warehouse")
+        loader.create_db(cur1, "warehouse")
+        conn, cur = loader.connect_to_server(host="mysql", port=3306, user="root", password="mysql", dbName="warehouse")
         loader.create_table(cur, "includes/sql/create_source_table.sql", "warehouse")
         loader.insert_into_table(cur, conn, "warehouse", data, "source")
         loader.close_connection(cur, conn)
